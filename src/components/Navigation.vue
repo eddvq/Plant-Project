@@ -1,14 +1,14 @@
 <template>
 <nav class="Nav" id="hamburgerMenu">
   <i class="Nav__menu fas fa-bars" v-on:click="toggleOn"></i>
-  <span class="Nav__title"><a class="Nav__title__a" href="index.html">Plant Project</a></span>
+  <span class="Nav__title"><router-link class="Nav__title__a" to="/">Plant Project</router-link></span>
   <i class="Nav__search-icon fas fa-search"></i>
 
   <!-- Hamburger Menue-->
   <div class="Nav__sliding-menu" v-bind:style="toggle">
     <ul class="Nav__sliding-menu__ul">
       <i class="Nav__sliding-menu__ul__close-icon fas fa-times" id="nav_menu_close_icon" v-on:click="toggleOff"></i>
-      <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a" href="about.html">About Plant Project</a></li>
+      <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a"><router-link to="/about">About Plant Project</router-link></a></li>
       <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a" href="#">Sources Cited</a></li>
       <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a" href="#">Contact Us</a></li>
     </ul>
@@ -17,7 +17,7 @@
   <!-- Tablet and Desktop Menu -->
   <div class="Nav__desktop-menu">
     <ul class="Nav__desktop-menu__ul">
-      <li class="Nav__desktop-menu__ul__li"><a class="Nav__desktop-menu__ul__li__a" href="about.html">About</a></li>
+      <li class="Nav__desktop-menu__ul__li"><router-link class="Nav__desktop-menu__ul__li__a" to="/about">About</router-link></li>
       <li class="Nav__desktop-menu__ul__li"><a class="Nav__desktop-menu__ul__li__a" href="">Sources Cited</a></li>
       <li class="Nav__desktop-menu__ul__li"><a class="Nav__desktop-menu__ul__li__a" href="">Contact Us</a></li>
     </ul>
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $arbory: #006C67;
 $grove: #00403d;
 $lily: #E6F0F0;

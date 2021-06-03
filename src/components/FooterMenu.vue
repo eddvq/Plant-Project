@@ -1,7 +1,7 @@
 <template lang="html">
   <footer class="Footer">
   <ul class="Footer__ul">
-    <li class="Footer__ul__li"><a class="Footer__ul__li__a" href="#">About Plant Project</a></li>
+    <li class="Footer__ul__li"><router-link class="Footer__ul__li__a" to="/about">About Plant Project</router-link></li>
     <li class="Footer__ul__li"><a class="Footer__ul__li__a" href="#">Sources Cited</a></li>
     <li class="Footer__ul__li"><a class="Footer__ul__li__a" href="#">Contact Us</a></li>
   </ul>
