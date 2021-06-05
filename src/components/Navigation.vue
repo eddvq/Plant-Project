@@ -8,9 +8,10 @@
   <div class="Nav__sliding-menu" v-bind:style="toggle">
     <ul class="Nav__sliding-menu__ul">
       <i class="Nav__sliding-menu__ul__close-icon fas fa-times" id="nav_menu_close_icon" v-on:click="toggleOff"></i>
-      <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a"><router-link to="/about">About Plant Project</router-link></a></li>
-      <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a" href="#">Sources Cited</a></li>
-      <li class="Nav__sliding-menu__ul__li"><a class="Nav__sliding-menu__ul__li__a" href="#">Contact Us</a></li>
+      <li class="Nav__sliding-menu__ul__li"><router-link class="Nav__sliding-menu__ul__li__a" v-on:click="toggleOff" to="/about">About Plant Project</router-link></li>
+      <li class="Nav__sliding-menu__ul__li"><router-link class="Nav__sliding-menu__ul__li__a" v-on:click="toggleOff" to="/sources">Sources Cited</router-link></li>
+      <li class="Nav__sliding-menu__ul__li"><router-link class="Nav__sliding-menu__ul__li__a" v-on:click="toggleOff" to="/contact">Contact Us</router-link></li>
+
     </ul>
   </div>
 
@@ -18,8 +19,8 @@
   <div class="Nav__desktop-menu">
     <ul class="Nav__desktop-menu__ul">
       <li class="Nav__desktop-menu__ul__li"><router-link class="Nav__desktop-menu__ul__li__a" to="/about">About</router-link></li>
-      <li class="Nav__desktop-menu__ul__li"><a class="Nav__desktop-menu__ul__li__a" href="">Sources Cited</a></li>
-      <li class="Nav__desktop-menu__ul__li"><a class="Nav__desktop-menu__ul__li__a" href="">Contact Us</a></li>
+      <li class="Nav__desktop-menu__ul__li"><router-link class="Nav__desktop-menu__ul__li__a" to="/sources">Sources Cited</router-link></li>
+      <li class="Nav__desktop-menu__ul__li"><router-link class="Nav__desktop-menu__ul__li__a" to="/contact">Contact Us</router-link></li>
     </ul>
   </div>
 </nav>
@@ -40,23 +41,15 @@ export default {
     },
     toggleOff() {
       this.toggle = 'width:0'
-    }
+    },
+
   }
 }
 </script>
 
 <style lang="scss" scoped>
-$arbory: #006C67;
-$grove: #00403d;
-$lily: #E6F0F0;
-$petal: #F2F7F7;
-$pebble: #E9E9E9;
-$boulder: #3D3D3D;
+@import "../scss/_variables.scss";
 
-@mixin li-style {
-    list-style: none;
-    font-family: 'Aleo', serif;
-}
 
 .Nav {
     background-color: $arbory;

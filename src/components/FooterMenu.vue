@@ -2,8 +2,8 @@
   <footer class="Footer">
   <ul class="Footer__ul">
     <li class="Footer__ul__li"><router-link class="Footer__ul__li__a" to="/about">About Plant Project</router-link></li>
-    <li class="Footer__ul__li"><a class="Footer__ul__li__a" href="#">Sources Cited</a></li>
-    <li class="Footer__ul__li"><a class="Footer__ul__li__a" href="#">Contact Us</a></li>
+    <li class="Footer__ul__li"><router-link class="Footer__ul__li__a" to="/sources">Sources Cited</router-link></li>
+    <li class="Footer__ul__li"><router-link class="Footer__ul__li__a" to="/contact">Contact Us</router-link></li>
   </ul>
 </footer>
 </template>
@@ -12,17 +12,7 @@
 
 <style lang="scss">
 
-$arbory: #006C67;
-$grove: #00403d;
-$lily: #E6F0F0;
-$petal: #F2F7F7;
-$pebble: #E9E9E9;
-$boulder: #3D3D3D;
-
-@mixin li-style {
-    list-style: none;
-    font-family: 'Aleo', serif;
-}
+@import "../scss/_variables.scss";
 
 .Footer {
     display: flex;
