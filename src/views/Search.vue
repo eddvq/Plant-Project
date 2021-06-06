@@ -1,22 +1,49 @@
 <template>
+<form class="Search" action="index.html" method="post">
+  <h2 class="Search__h2"> Let's help your garden get started! </h2>
+  <div class="Search__controls">
+    <input class="Search__controls__text-input" type="text" name="location" value="Zip Code, State, Country" v-on:click="hideText">
+    <button class="Search__controls__submit-input">
+      <i class="Search__controls__submit-input__i fas fa-search"></i>
+    </button>
+
+  </div>
+</form>
 <div class="Blurb">
-  <h1 class="Blurb__h2"> Let's help your garden get started! </h1>
-
-  <form class="Search" action="index.html" method="post">
-    <input class="Search__text-input" type="text" name="" value="Location of your garden">
-    <input class="Search__submit-input" type="submit" name="" value="">
-  </form>
-
+  <h3 class="Blurb__h3">Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</h3>
 </div>
-
-<p class="Blurb__p">Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</p>
-
+<hr class="Blurb__hr">
+<div class="Gallery">
+  <div class="Gallery__case">
+    <img class="Gallery__case__image" src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Gardener holding bowl of tomatos">
+    <h3 class="Gallery__case__h3">Plants you can grow</h3>
+    <p class="Gallery__case__p">Identify plants that are suitable for your garden. You'll spend more time planning and less time guessing what will work</p>
+  </div>
+</div>
+<hr class="Blurb__hr">
+<div class="Gallery">
+  <div class="Gallery__case">
+    <img class="Gallery__case__image" src="https://images.unsplash.com/photo-1599238302746-b9e00abf2df5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" alt="Gardener holding bowl of tomatos">
+    <h3 class="Gallery__case__h3">Gardens to be proud of</h3>
+    <p class="Gallery__case__p">Learn about the plants growing requirments. Go from beginner gardener to expert in no time!</p>
+  </div>
+</div>
 </template>
 
 
 <script>
 export default {
-  name: 'Search',
+  // name: 'Search',
+  // data() {
+  //   return {
+  //     value: 'Zip Code, State, Country'
+  //   }
+  // },
+  // methods: {
+  //   hideText(){
+  //     this.value = ''
+  //   }
+  // }
 }
 </script>
 
@@ -25,17 +52,72 @@ export default {
 @import "../scss/_variables.scss";
 
 .Blurb {
-  height: 15rem;
   padding: 1.5rem;
-  background-image: url(https://images.unsplash.com/photo-1444392061186-9fc38f84f726?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1652&q=80);
-  background-repeat: no-repeat;
-  background-size: cover;
-  &__h2{
-    font-size: 2.5rem;
-    color: $lily;
+    &__h3 {
+      font-family: 'Aleo', serif;
+      color: $boulder;
+    }
+    &__hr {
+      border: 2px solid $pebble;
+      margin: 0;
+    }
+
+}
+
+.Gallery {
+  padding: 1.5rem;
+  &__case{
+    display: flex;
+    flex-direction: column;
+    &__image{
+      width: 100%;
+      margin-top: 1rem;
+    }
+    &__h3{
+      font-family: 'Aleo', serif;
+      color: $boulder;
+      margin-bottom: .75rem;
+      text-decoration: underline;
+      text-decoration-color: $arbory;
+    }
+    &__p{
+      font-family: 'Aleo', serif;
+      margin: 0;
+    }
   }
 }
 
-
-
+.Search {
+    padding: 1.5rem;
+    background-image: url("https://images.unsplash.com/photo-1474265648294-a4236906a526?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    &__h2 {
+        font-size: 2.5rem;
+        color: $lily;
+        font-family: 'Aleo', serif;
+        text-shadow: 2px 2px 6px #000000;
+    }
+    &__controls {
+        display: flex;
+        &__text-input {
+            width: 100%;
+            padding: 1.25rem;
+            border: none;
+            border-radius: 2px 0 0 2px;
+        }
+        &__submit-input {
+            width: 5rem;
+            background-color: $pebble;
+            border: none;
+            border-radius: 0 2px 2px 0;
+            &__i {
+                font-size: 1.75rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
 </style>
