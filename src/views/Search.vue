@@ -11,33 +11,9 @@
 <Header>
   <template v-slot:headerSlot>Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</template>
 </Header>
-<InfoTile>
-  <template v-slot:tileHeadline>Plants you can grow</template>
-  <template v-slot:tileBody>Identify plants that are suitable for your garden. You'll spend more time planning and less time guessing what will work</template>
-</InfoTile>
 
-<InfoTile>
-  <template v-slot:tileHeadline>Gardens to be proud of</template>
-  <template v-slot:tileBody>Learn about the plants growing requirments. Go from beginner gardener to expert in no time!</template>
-</InfoTile>
 
-<InfoTile>
-  <template v-slot:tileHeadline> {{tiles[0].headline}}</template>
-</InfoTile>
-<!-- <div class="Gallery">
-  <div class="Gallery__case">
-    <img class="Gallery__case__image" src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Gardener holding bowl of tomatos">
-    <h3 class="Gallery__case__h3">Plants you can grow</h3>
-    <p class="Gallery__case__p">Identify plants that are suitable for your garden. You'll spend more time planning and less time guessing what will work</p>
-  </div>
-</div> -->
-<!-- <div class="Gallery">
-  <div class="Gallery__case">
-    <img class="Gallery__case__image" src="https://images.unsplash.com/photo-1599238302746-b9e00abf2df5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80" alt="Gardener holding bowl of tomatos">
-    <h3 class="Gallery__case__h3">Gardens to be proud of</h3>
-    <p class="Gallery__case__p">Learn about the plants growing requirments. Go from beginner gardener to expert in no time!</p>
-  </div>
-</div> -->
+<InfoTile v-bind:tiles="tiles"></InfoTile>
 </template>
 
 
@@ -49,25 +25,25 @@ export default {
   name: 'Search',
   data() {
     return {
-      tiles: [
-        {
-        headline: 'Plants you can grow',
-        body: 'Identify plants that are suitable for your garden',
-        image: 'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
-        alt: 'Image of a person holding tomatos'
+      tiles: [{
+          headline: 'Plants you can grow',
+          body: 'Identify plants that are suitable for your garden. You will spend more time planning and less time guessing what will work',
+          image: 'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+          alt: 'Person holding a bowl of tomatos'
         },
         {
-        headline: "Plant name 2",
-        body: 'Body of the copy',
-        image: 'https://images.unsplash.com/photo-1599238302746-b9e00abf2df5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80',
-        alt: 'Image of person tending garden'
+          headline: "Gardens to be proud of",
+          body: 'Learn about the plants growing requirments. Go from beginner gardener to expert in no time!',
+          image: 'https://images.unsplash.com/photo-1599238302746-b9e00abf2df5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80',
+          alt: 'Person digging a hole in their garden'
+        },
+        {
+          headline: 'Plan by season',
+          body: 'Learn about the different plants and vegetables that grow during the different seasons of the year',
+          image: 'https://images.unsplash.com/photo-1575218823251-f9d243b6f720?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+          alt: 'An assortment of vegetables that are in season'
         }
-    ]
-    }
-  },
-  methods: {
-    hi(){
-      console.log(this.tiles[1]);
+      ]
     }
   },
   components: {
@@ -80,29 +56,6 @@ export default {
 
 <style lang="scss">
 @import "../scss/_variables.scss";
-
-// .Gallery {
-//   padding: 1.5rem;
-//   &__case{
-//     display: flex;
-//     flex-direction: column;
-//     &__image{
-//       width: 100%;
-//       margin-top: 1rem;
-//     }
-//     &__h3{
-//       font-family: 'Aleo', serif;
-//       color: $boulder;
-//       margin-bottom: .75rem;
-//       text-decoration: underline;
-//       text-decoration-color: $arbory;
-//     }
-//     &__p{
-//       font-family: 'Aleo', serif;
-//       margin: 0;
-//     }
-//   }
-// }
 
 .Search {
     padding: 1.5rem;
