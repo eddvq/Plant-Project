@@ -19,7 +19,7 @@ export default {
   name: 'App',
   components: {
     Navigation,
-    FooterMenu,
+    FooterMenu
   }
 }
 </script>

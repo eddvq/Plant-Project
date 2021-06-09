@@ -1,12 +1,17 @@
 <template lang="html">
-  <h2>This page is going to be for the feedback form</h2>
+  <Header>
+    <template v-slot:headerSlot>Thank you for using this search tool. I'm learning more about code and would appreciate feedback to make this tool better.</template>
+  </Header>
+  
 </template>
 
-
 <script>
+import Header from '@/components/Header.vue'
 
-  export default {
-    name: 'Contact',
+export default {
+  name: 'Contact',
+  components: {
+    Header
   }
-
+}
 </script>

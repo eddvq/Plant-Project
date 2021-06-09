@@ -1,14 +1,16 @@
-<template>
-  <div>
-    <h1>This is where the about page will be</h1>
-  </div>
+<template lang="html">
+  <Header>
+    <template v-slot:headerSlot>This is where a blurb about the page will be.</template>
+  </Header>
 </template>
 
-
 <script>
+import Header from '@/components/Header.vue'
 
-  export default {
-    name: 'About',
+export default {
+  name: 'About',
+  components: {
+    Header
   }
-
+}
 </script>
