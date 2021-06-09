@@ -12,8 +12,9 @@
   <template v-slot:headerSlot>Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</template>
 </Header>
 
-
+<div class="Container">
 <InfoTile v-bind:tiles="tiles"></InfoTile>
+</div>
 </template>
 
 
@@ -56,6 +57,13 @@ export default {
 
 <style lang="scss">
 @import "../scss/_variables.scss";
+
+// .Container {
+//   @media only screen and (min-width: 1110px) {
+//   display: flex;
+//   padding: 15rem;
+//   }
+// }
 
 .Search {
     padding: 1.5rem;
