@@ -17,6 +17,8 @@ export default {
 
 .Blurb {
     padding: 1.5rem;
+    @media only screen and (min-width: 768px) {padding: 2rem 4rem;};
+    @media only screen and (min-width: 1110px) {padding: 2rem 12rem;}
     &__h3 {
         font-family: 'Aleo', serif;
         color: $boulder;

@@ -68,7 +68,6 @@ export default {}
 
 <script>
 export default {
-  // props: ['tiles'],
   props: {
     tiles:{
       type: Array,
@@ -87,6 +86,8 @@ export default {
 .Gallery {
     padding: 1.5rem;
     border-bottom: 4px solid $pebble;
+    @media only screen and (min-width: 768px) {border-bottom: none;}
+
     &__case {
         display: flex;
         flex-direction: column;

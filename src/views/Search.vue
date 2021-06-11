@@ -2,7 +2,7 @@
 <form class="Search" action="index.html" method="post">
   <h2 class="Search__h2"> Let's help your garden get started! </h2>
   <div class="Search__controls">
-    <input class="Search__controls__text-input" type="text" name="location" value="Zip Code, State, Country" onfocus="this.value=''">
+    <input class="Search__controls__text-input" type="text" name="location" value="Plant name (e.g tomato, carrots, or apples)" onfocus="this.value=''">
     <button class="Search__controls__submit-input">
       <i class="Search__controls__submit-input__i fas fa-search"></i>
     </button>
@@ -41,8 +41,8 @@ export default {
         {
           headline: 'Plan by season',
           body: 'Learn about the different plants and vegetables that grow during the different seasons of the year',
-          image: 'https://images.unsplash.com/photo-1575218823251-f9d243b6f720?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-          alt: 'An assortment of vegetables that are in season'
+          image: 'https://images.unsplash.com/photo-1592863690346-6b28b8effea8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80',
+          alt: 'Person pruning a decorative shrub'
         }
       ]
     }
@@ -58,12 +58,16 @@ export default {
 <style lang="scss">
 @import "../scss/_variables.scss";
 
-// .Container {
-//   @media only screen and (min-width: 1110px) {
-//   display: flex;
-//   padding: 15rem;
-//   }
-// }
+.Container {
+  @media only screen and (min-width: 768px) {
+  display: flex;
+  padding: 2rem;
+  }
+  @media only screen and (min-width: 1110px) {
+  display: flex;
+  padding: 1.5rem 10rem;
+  }
+}
 
 .Search {
     padding: 1.5rem;
