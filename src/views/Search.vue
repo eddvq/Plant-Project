@@ -1,17 +1,30 @@
 <template>
-<form class="Search" action="index.html" method="post">
+<form @submit.prevent="handleSubmit" class="Search" action="index.html" method="post">
   <h2 class="Search__h2"> Let's help your garden get started! </h2>
   <div class="Search__controls">
-    <input class="Search__controls__text-input" type="text" name="location" value="Plant name (e.g tomato, carrots, or apples)" onfocus="this.value=''">
-    <button class="Search__controls__submit-input">
+    <input class="Search__controls__text-input" type="text" name="search" onfocus="this.value=''" v-model='search'>
+    <!-- Safe approach -->
+    <!-- <button class="Search__controls__submit-input">
+      <i class="Search__controls__submit-input__i fas fa-search"></i>
+    </button> -->
+
+    <!-- Alternate approach -->
+    <!-- <button class="Search__controls__submit-input">
+      <i class="Search__controls__submit-input__i fas fa-search"></i>
+    </button> -->
+
+    <!-- Wrapped Router Link ?  -->
+    <router-link class="Search__controls__submit-input" to="/results">
+      <button class="Search__controls__submit-input">
       <i class="Search__controls__submit-input__i fas fa-search"></i>
     </button>
+  </router-link>
+
   </div>
 </form>
 <Header>
   <template v-slot:headerSlot>Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</template>
 </Header>
-
 <div class="Container">
 <InfoTile v-bind:tiles="tiles"></InfoTile>
 </div>
@@ -26,6 +39,7 @@ export default {
   name: 'Search',
   data() {
     return {
+      search: 'Plant name (e.g tomato, carrots, or apples)',
       tiles: [{
           headline: 'Plants you can grow',
           body: 'Identify plants that are suitable for your garden. You will spend more time planning and less time guessing what will work',
@@ -50,6 +64,12 @@ export default {
   components: {
     InfoTile,
     Header,
+  },
+  methods: {
+    handleSubmit(){
+      router.push(results);
+      console.log('The eagle has landed')
+    }
   }
 }
 </script>
@@ -109,6 +129,9 @@ export default {
             background-color: $pebble;
             border: none;
             border-radius: 0 2px 2px 0;
+
+            // Remove if you find a better solve
+            padding-top:7px;
             &__i {
                 font-size: 1.75rem;
                 cursor: pointer;

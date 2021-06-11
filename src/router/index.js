@@ -4,6 +4,7 @@ import Search from '../views/Search.vue'
 import About from '../views/About.vue'
 import Sources from '../views/Sources.vue'
 import Contact from '../views/Contact.vue'
+import Results from '../views/Results.vue'
 
 const routes = [
   {
@@ -25,7 +26,13 @@ const routes = [
     path: '/contact',
     name: 'Contact',
     component: Contact
+  },
+  {
+    path: '/results',
+    name: 'Results',
+    component: Results
   }
+  
   // {
   //   path: '/',
   //   name: 'Home',

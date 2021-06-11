@@ -87,6 +87,7 @@ export default {
     padding: 1.5rem;
     border-bottom: 4px solid $pebble;
     @media only screen and (min-width: 768px) {border-bottom: none;}
+    
 
     &__case {
         display: flex;
