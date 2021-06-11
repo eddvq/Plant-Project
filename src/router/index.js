@@ -6,6 +6,8 @@ import Sources from '../views/Sources.vue'
 import Contact from '../views/Contact.vue'
 import Results from '../views/Results.vue'
 
+// Vue.use(vueRouter);
+
 const routes = [
   {
     path: '/',
@@ -28,11 +30,11 @@ const routes = [
     component: Contact
   },
   {
-    path: '/results',
+    path: '/results/:uSearch',
     name: 'Results',
     component: Results
   }
-  
+
   // {
   //   path: '/',
   //   name: 'Home',

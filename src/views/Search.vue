@@ -3,24 +3,14 @@
   <h2 class="Search__h2"> Let's help your garden get started! </h2>
   <div class="Search__controls">
     <input class="Search__controls__text-input" type="text" name="search" onfocus="this.value=''" v-model='search'>
-    <!-- Safe approach -->
-    <!-- <button class="Search__controls__submit-input">
-      <i class="Search__controls__submit-input__i fas fa-search"></i>
-    </button> -->
-
-    <!-- Alternate approach -->
-    <!-- <button class="Search__controls__submit-input">
-      <i class="Search__controls__submit-input__i fas fa-search"></i>
-    </button> -->
-
-    <!-- Wrapped Router Link ?  -->
-    <router-link class="Search__controls__submit-input" to="/results">
+    <router-link class="Search__controls__submit-input" v-bind:to="this.newString" v-on:click="logger" v-on:keyup.enter="logger">
       <button class="Search__controls__submit-input">
       <i class="Search__controls__submit-input__i fas fa-search"></i>
     </button>
   </router-link>
 
   </div>
+
 </form>
 <Header>
   <template v-slot:headerSlot>Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</template>
@@ -39,7 +29,13 @@ export default {
   name: 'Search',
   data() {
     return {
+      // link: '/results/apple',
+      link: '/results/',
+      // search: 'Plant name (e.g tomato, carrots, or apples)',
+// I NEED TO FIND A WAY TO FUSE THESE TWO STRINGS
       search: 'Plant name (e.g tomato, carrots, or apples)',
+      newString: '',
+
       tiles: [{
           headline: 'Plants you can grow',
           body: 'Identify plants that are suitable for your garden. You will spend more time planning and less time guessing what will work',
@@ -66,9 +62,8 @@ export default {
     Header,
   },
   methods: {
-    handleSubmit(){
-      router.push(results);
-      console.log('The eagle has landed')
+    logger(){
+      this.newString = this.link.concat(this.search);
     }
   }
 }
