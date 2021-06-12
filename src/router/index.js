@@ -30,7 +30,7 @@ const routes = [
     component: Contact
   },
   {
-    path: '/results/:uSearch',
+    path: '/results',
     name: 'Results',
     component: Results
   }
