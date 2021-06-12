@@ -1,7 +1,7 @@
 <template>
 <div class="Search">
   <h2 class="Search__h2">Let's help you meet some new plants!</h2>
-    <router-link class="Search__button" to="/results" v-on:keyup.enter="logger">
+    <router-link class="Search__button" to="/results">
       <span>Let's go! </span>
       <i class="fas fa-seedling"></i>
     </router-link>
@@ -19,6 +19,7 @@
 <script>
 import InfoTile from '@/components/InfoTile.vue'
 import Header from '@/components/Header.vue'
+import SearchTiles from '@/components/SearchTiles.vue'
 
 export default {
   name: 'Search',
@@ -50,6 +51,7 @@ export default {
   components: {
     InfoTile,
     Header,
+    SearchTiles,
   },
   methods: {
   }
