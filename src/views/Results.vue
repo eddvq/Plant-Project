@@ -35,7 +35,7 @@ export default {
       // console.log(this.growLink.concat(this.submitted))
 
 
-      fetch('https://www.growstuff.org/api/v1/crops/301')
+      fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
 
       .then(response => {
         console.log(response)
@@ -50,14 +50,7 @@ export default {
 
 
 
-    // Removes the plus so that it looks human readable on the page
-    // plusRemover(){
-    //   console.log(this.submitted)
-    //   for (let i = 0; i < this.newString.length; i++){
-    //     this.newString = this.submitted.replace('+', ' ');
-    //     console.log(this.newString)
-    //   }
-    // }
+
   }
 }
 </script>
