@@ -1,5 +1,5 @@
 <template>
-<form @submit.prevent="handleSubmit" class="Search" action="index.html" method="post">
+<form @submit.prevent="handleSubmit" class="Search" action="index.html" method="get">
   <h2 class="Search__h2"> Let's help your garden get started! </h2>
   <div class="Search__controls">
     <input class="Search__controls__text-input" type="text" name="search" onfocus="this.value=''" v-model='search'>
@@ -64,6 +64,10 @@ export default {
   methods: {
     logger(){
       this.newString = this.link.concat(this.search);
+      for (let i = 0; i < this.newString.length; i++){
+        this.newString = this.newString.replace(' ', '+');
+      }
+
     }
   }
 }
