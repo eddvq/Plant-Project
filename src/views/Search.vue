@@ -1,19 +1,14 @@
 <template>
-<form @submit.prevent="handleSubmit" class="Search" action="index.html" method="get">
-  <h2 class="Search__h2"> Let's help your garden get started! </h2>
-  <div class="Search__controls">
-    <input class="Search__controls__text-input" type="text" name="search" onfocus="this.value=''" v-model='search'>
-    <router-link class="Search__controls__submit-input" v-bind:to="this.newString" v-on:click="logger" v-on:keyup.enter="logger">
-      <button class="Search__controls__submit-input">
-      <i class="Search__controls__submit-input__i fas fa-search"></i>
-    </button>
-  </router-link>
+<div class="Search">
+  <h2 class="Search__h2">Let's help you meet some new plants!</h2>
+    <router-link class="Search__button" to="/results" v-on:keyup.enter="logger">
+      <span>Let's go! </span>
+      <i class="fas fa-seedling"></i>
+    </router-link>
+</div>
 
-  </div>
-
-</form>
 <Header>
-  <template v-slot:headerSlot>Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about the ideal plants that grow in your region.</template>
+  <template v-slot:headerSlot>Gardening is a fun and rewarding hobby that anyone with soil can enjoy. This app helps you learn about random plants that you could grow in your backyard.</template>
 </Header>
 <div class="Container">
 <InfoTile v-bind:tiles="tiles"></InfoTile>
@@ -29,15 +24,10 @@ export default {
   name: 'Search',
   data() {
     return {
-      // link: '/results/apple',
       link: '/results/',
-      // search: 'Plant name (e.g tomato, carrots, or apples)',
-// I NEED TO FIND A WAY TO FUSE THESE TWO STRINGS
-      search: 'Plant name (e.g tomato, carrots, or apples)',
-      newString: '',
 
       tiles: [{
-          headline: 'Plants you can grow',
+          headline: 'Meet a new plant',
           body: 'Identify plants that are suitable for your garden. You will spend more time planning and less time guessing what will work',
           image: 'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
           alt: 'Person holding a bowl of tomatos'
@@ -62,13 +52,6 @@ export default {
     Header,
   },
   methods: {
-    logger(){
-      this.newString = this.link.concat(this.search);
-      for (let i = 0; i < this.newString.length; i++){
-        this.newString = this.newString.replace(' ', '+');
-      }
-
-    }
   }
 }
 </script>
@@ -95,46 +78,44 @@ export default {
     background-size: cover;
     display: flex;
     flex-direction: column;
+    text-align: center;
     @media only screen and (min-width: 768px) {
         height: 15rem;
-        text-align: center;
         padding-left: 5rem;
         padding-right: 5rem;
-    };
+    }
+    @media only screen and (min-width: 1110px) {
+      padding-left: 20rem;
+      padding-right: 20rem;
+    }
     &__h2 {
         font-size: 2.5rem;
         color: $lily;
         font-family: 'Aleo', serif;
         text-shadow: 2px 2px 6px #000000;
     }
-    &__controls {
+    &__button {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient($sun,$daisy);
+        border-radius: 4px;
+        font-family: 'Aleo', serif;
+        font-weight: bold;
+        font-size: 1.6rem;
+        height: 4rem;
+        color: $coal;
+        text-decoration: none;
         @media only screen and (min-width: 768px) {
             padding-left: 4rem;
             padding-right: 4rem;
-        };
+        }
         @media only screen and (min-width: 1110px) {
             padding-left: 11rem;
             padding-right: 11rem;
-        };
-        &__text-input {
-            width: 100%;
-            padding: 1.25rem;
-            border: none;
-            border-radius: 2px 0 0 2px;
         }
-        &__submit-input {
-            width: 5rem;
-            background-color: $pebble;
-            border: none;
-            border-radius: 0 2px 2px 0;
-
-            // Remove if you find a better solve
-            padding-top:7px;
-            &__i {
-                font-size: 1.75rem;
-                cursor: pointer;
-            }
+        .fa-seedling{
+          padding-left: 1rem;
         }
     }
 }
