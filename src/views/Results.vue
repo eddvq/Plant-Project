@@ -17,7 +17,10 @@
     </div>
   </div> -->
 
-  <div class="Gallery">
+  <!-- So the thing works if and only if you turn off and on the toggle after it loads. GO HERE -->
+<!-- THIS TUTORIAL https://www.youtube.com/watch?v=Qypxpm-llnQ -->
+
+  <div class="Gallery" v-if="list.included && list.data">
     <div class="Gallery__case">
       <img class="Gallery__case__image" v-bind:src="list.included[0].attributes['fullsize-url']">
       <h3 class="Gallery__case__h3">{{this.list.data.attributes.name}}</h3>
@@ -25,7 +28,7 @@
     </div>
   </div>
 
-
+  <!-- <SearchTiles v-bind:lists="lists"/> -->
 
   </template>
 
@@ -46,7 +49,7 @@ export default {
     SearchTiles,
   },
   mounted(){
-    fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
+    fetch('https://www.growstuff.org/api/v1/crops/330?include=photos')
     .then(response => {
         return response.json()
     })
@@ -55,86 +58,31 @@ export default {
       console.log(this.list.included[0].attributes['fullsize-url'])
       console.log(this.list.data.attributes.name)
       console.log(this.list.data.attributes['en-wikipedia-url'])
+      console.log(this.list)
     })
     .catch(err => {
       console.log("ERROR", err)
     })
-  }
-  // mounted(){
-  //     fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
-  //     .then(response => {
-  //
-  //         return response.json()
-  //
-  //
-  //     })
-  //     .then((json) => {
-  //       this.list = json
-  //       console.log(this.list.included[0].attributes['fullsize-url'])
-  //       console.log(this.list.data.attributes.name)
-  //       console.log(this.list.data.attributes['en-wikipedia-url'])
-  //     })
-  //     .catch(err => {
-  //       console.log("ERROR", err)
-  //     })
-  // }
-  // methods: {
-  //   getData(){
-  //     fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
-  //     .then(response => {
-  //       if(response.ok){
-  //         // console.log(response)
-  //         return response.json()
-  //       } else {
-  //         throw new Error("Request has failed")
-  //       }
-  //
-  //     })
-  //     .then((json) => {
-  //       this.list = json
-  //       // console.log(this.list)
-  //     })
-  //     .catch(err => {
-  //       console.log("ERROR", err)
-  //     })
-  //   }
-  // }
-}
-</script>
-
-
-
-<!-- </template>
-
-<script>
-import Header from '@/components/Header.vue'
-
-export default {
-  name: 'Results',
-  data() {
-    return {
-      list: []
-    }
-  },
-  components: {
-    Header
   },
   methods: {
-
     getData(){
-
       fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
       .then(response => {
-        console.log(response)
-        return response.json()
+          return response.json()
       })
       .then((json) => {
-        console.log(json)
+        this.list = json
+        console.log(this.list.included[0].attributes['fullsize-url'])
+        console.log(this.list.data.attributes.name)
+        console.log(this.list.data.attributes['en-wikipedia-url'])
+      })
+      .catch(err => {
+        console.log("ERROR", err)
       })
     }
   }
 }
-</script> -->
+</script>
 
 
 <style lang="scss">
