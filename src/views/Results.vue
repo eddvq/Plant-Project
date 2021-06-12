@@ -8,18 +8,20 @@
       <p>Data is recieved through the <a href="https://github.com/Growstuff/growstuff/wiki/API">GrowStuff API</a></p>
   </div>
   <!-- <SearchTiles.vue/> -->
+
   <!-- <div class="Gallery">
     <div class="Gallery__case">
-      <img class="Gallery__case__image" src="https://images.unsplash.com/photo-1601326106034-cd0d601458a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80">
-      <h3 class="Gallery__case__h3">blah</h3>
-      <p class="Gallery__case__p">blah</p>
+      <img class="Gallery__case__image">
+      <h3 class="Gallery__case__h3">Plant name</h3>
+      <a class="Gallery__case__p">Learn more</a>
     </div>
   </div> -->
+
   <div class="Gallery">
     <div class="Gallery__case">
-      <img class="Gallery__case__image">
-      <h3 class="Gallery__case__h3">blah</h3>
-      <p class="Gallery__case__p">blah</p>
+      <img class="Gallery__case__image" v-bind:src="list.included[0].attributes['fullsize-url']">
+      <h3 class="Gallery__case__h3">{{this.list.data.attributes.name}}</h3>
+      <a class="Gallery__case__p" v-bind:href="this.list.data.attributes['en-wikipedia-url']">Learn more</a>
     </div>
   </div>
 
@@ -44,48 +46,59 @@ export default {
     SearchTiles,
   },
   mounted(){
-      fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
-      .then(response => {
-        if(response.ok){
-          console.log(response)
-          return response.json()
-        } else {
-          throw new Error("Request has failed")
-        }
-
-      })
-      .then((json) => {
-        this.list = json
-        console.log(this.list.included[0].attributes['thumbnail-url'])
-        console.log(this.list.data.attributes.name)
-        console.log(this.list.data.attributes['en-wikipedia-url'])
-
-      })
-      .catch(err => {
-        console.log("ERROR", err)
-      })
-  },
-  methods: {
-    getData(){
-      fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
-      .then(response => {
-        if(response.ok){
-          // console.log(response)
-          return response.json()
-        } else {
-          throw new Error("Request has failed")
-        }
-
-      })
-      .then((json) => {
-        this.list = json
-        // console.log(this.list)
-      })
-      .catch(err => {
-        console.log("ERROR", err)
-      })
-    }
+    fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
+    .then(response => {
+        return response.json()
+    })
+    .then((json) => {
+      this.list = json
+      console.log(this.list.included[0].attributes['fullsize-url'])
+      console.log(this.list.data.attributes.name)
+      console.log(this.list.data.attributes['en-wikipedia-url'])
+    })
+    .catch(err => {
+      console.log("ERROR", err)
+    })
   }
+  // mounted(){
+  //     fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
+  //     .then(response => {
+  //
+  //         return response.json()
+  //
+  //
+  //     })
+  //     .then((json) => {
+  //       this.list = json
+  //       console.log(this.list.included[0].attributes['fullsize-url'])
+  //       console.log(this.list.data.attributes.name)
+  //       console.log(this.list.data.attributes['en-wikipedia-url'])
+  //     })
+  //     .catch(err => {
+  //       console.log("ERROR", err)
+  //     })
+  // }
+  // methods: {
+  //   getData(){
+  //     fetch('https://www.growstuff.org/api/v1/crops/301?include=photos')
+  //     .then(response => {
+  //       if(response.ok){
+  //         // console.log(response)
+  //         return response.json()
+  //       } else {
+  //         throw new Error("Request has failed")
+  //       }
+  //
+  //     })
+  //     .then((json) => {
+  //       this.list = json
+  //       // console.log(this.list)
+  //     })
+  //     .catch(err => {
+  //       console.log("ERROR", err)
+  //     })
+  //   }
+  // }
 }
 </script>
 
