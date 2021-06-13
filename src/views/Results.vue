@@ -102,7 +102,7 @@ export default {
 @import "../scss/_variables.scss";
 
   .Results{
-    @media only screen and (min-width: 768px) {display: flex; justify-content: center;}
+    @media only screen and (min-width: 768px) {display: flex; justify-content: center; padding-top: 4rem; padding-bottom: 5rem;}
     padding: 2rem;
     &__case{
       &__h3{

@@ -43,6 +43,7 @@ export default {
 
 .Container {
   padding: 1rem;
+  margin-bottom: 1rem;
     @media only screen and (min-width: 768px) {
         display: flex;
         padding-bottom: 3rem;
