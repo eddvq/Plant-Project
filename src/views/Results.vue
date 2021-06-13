@@ -23,6 +23,8 @@
   <div class="Gallery" v-if="list.data">
     <div class="Gallery__case">
       <h3 class="Gallery__case__h3">{{this.list.data.attributes.name}}</h3>
+      <p v-if="list.data.attributes.perennial">This planet is perennial!</p>
+      <p v-else>This plant is not perennial.</p>
       <a class="Gallery__case__p" v-bind:href="this.list.data.attributes['en-wikipedia-url']">Learn more</a>
     </div>
   </div>
@@ -61,6 +63,8 @@ export default {
       console.log(this.list)
       console.log(this.list.data.attributes.name)
       console.log(this.list.data.attributes['en-wikipedia-url'])
+      console.log(this.list.data.attributes.perennial)
+
       console.log(this.list)
     })
     .catch(err => {
@@ -81,6 +85,8 @@ export default {
         this.list = json
         console.log(this.list.data.attributes.name)
         console.log(this.list.data.attributes['en-wikipedia-url'])
+        console.log(this.list.data.attributes.perennial)
+
       })
       .catch(err => {
         console.log("ERROR", err)
