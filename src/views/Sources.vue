@@ -1,6 +1,6 @@
 <template lang="html">
   <Header>
-    <template v-slot:headerSlot>This tool was made possible with the help of the following tools and resources below:</template>
+    <template v-slot:headerSlot>Major thanks to the resources below for helping make this project work and look snazzy!</template>
   </Header>
 </template>
 
