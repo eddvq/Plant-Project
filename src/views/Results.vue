@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="Search">
-    <h2 class="Search__h2">Learn about a random crop!</h2>
+    <h2 class="Search__h2">Learn about another random crop!</h2>
       <div class="Search__button" v-on:click="getData()">
-        <span>Let's go!</span>
+        <span>Show me!</span>
         <i class="fas fa-seedling"></i>
       </div>
       <p>Data is recieved through the <a href="https://github.com/Growstuff/growstuff/wiki/API">GrowStuff API</a></p>

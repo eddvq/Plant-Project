@@ -6,7 +6,7 @@
     <template v-slot:headerSlot>Do you like plants? Surely you do otherwise why are you here!? Thanks for checking my project out!</template>
   </Header>
   <div class="Container">
-  <img class="Container__img" src="https://images.unsplash.com/photo-1602080858428-57174f9431cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1719&q=80" alt="Laptop sitting on a table in a garden">
+  <img class="Container__img" src="https://images.unsplash.com/photo-1602080858428-57174f9431cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1719&q=20" alt="Laptop sitting on a table in a garden">
   <div class="Container__text">
     <p class="Container__text__p">The project started out of my curiosity of the plantlife of my neighborhood. I originally wanted a searchable plant resource that could help people find local plants they can grow in their garden.</p>
     <p class="Container__text__p">It seemed like a cool idea but found myself not being able to find the right information or APIs and figured to scrap the project altogether. I really wanted to keep the project about plants but best resource was more for agricultural operations. I don't think the average gardener has tons of acres to work with!</p>
@@ -33,7 +33,7 @@ export default {
 .Search {
     height: 6rem;
     padding: 1.5rem;
-    background-image: url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+    background-image: url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=10");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;

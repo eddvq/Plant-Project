@@ -30,19 +30,19 @@ export default {
       tiles: [{
           headline: 'Meet a new plant',
           body: 'Identify plants that are suitable for your garden. You will spend more time planning and less time guessing what will work',
-          image: 'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+          image: 'https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=20',
           alt: 'Person holding a bowl of tomatos'
         },
         {
           headline: "Gardens to be proud of",
           body: 'Learn about the plants growing requirments. Go from beginner gardener to expert in no time!',
-          image: 'https://images.unsplash.com/photo-1599238302746-b9e00abf2df5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80',
+          image: 'https://images.unsplash.com/photo-1599238302746-b9e00abf2df5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=20',
           alt: 'Person digging a hole in their garden'
         },
         {
           headline: 'Plan by season',
           body: 'Learn about the different plants and vegetables that grow during the different seasons of the year',
-          image: 'https://images.unsplash.com/photo-1592863690346-6b28b8effea8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80',
+          image: 'https://images.unsplash.com/photo-1592863690346-6b28b8effea8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=20',
           alt: 'Person pruning a decorative shrub'
         }
       ]
