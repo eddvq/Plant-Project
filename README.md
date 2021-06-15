@@ -6,8 +6,7 @@ The primary focus of the website currently helping users find single crop/plant 
 
 ###Current SEO Strategies
 
-The strategies that were implemented in the current build of the page include accessibility and increasing the sites performance. In the previous build of the site the images that were being pulled from Unsplash were at a high resolution which hurt load times, especially in pages with large background images. When simulating a slow internet connection, the main page would take around 5 seconds to load which feels like an eternity.  The images were switched to images that had on lower kb weights which resulted in quicker and snappier load times. To address accessibility, none-decorative images were given alt tags to help users with screen readers consume the content. Additionally, some meta tags were used such as the title and description attribute to help with search results.
-
+The strategies that were implemented in the current build of the page include accessibility and increasing the sites performance. In the previous build of the site the images that were being pulled from Unsplash were at a high resolution which hurt load times, especially in pages with large background images. When simulating a slow internet connection, the main page would take around 5 seconds to load which feels like an eternity. The images were switched to images that had on lower kb weights which resulted in quicker and snappier load times. To address accessibility, none-decorative images were given alt tags to help users with screen readers consume the content. Additionally, some meta tags were used such as the title and description attribute to help with search results. One big bug that was resolved was that buttons were not selecting when navigating with the tab buttons which would have made it difficult for users that use the keyboards or rely on tabbing to navigate the page. 
 
 ## Project setup
 ```
