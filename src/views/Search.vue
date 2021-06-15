@@ -1,7 +1,7 @@
 <template>
 <div class="Search">
   <h2 class="Search__h2">Let's help you meet some new plants!</h2>
-    <router-link class="Search__button" to="/results">
+    <router-link class="Search__button" to="/results" tabindex=0>
       <span>Let's go! </span>
       <i class="fas fa-seedling"></i>
     </router-link>

@@ -10,7 +10,7 @@
   </div>
   <div class="Search">
     <h2 class="Search__h2">Learn about another random crop!</h2>
-      <div class="Search__button" v-on:click="getData()">
+      <div class="Search__button" v-on:click="getData()" tabindex="0" v-on:keyup.enter="getData()">
         <span>Show me!</span>
         <i class="fas fa-seedling"></i>
       </div>

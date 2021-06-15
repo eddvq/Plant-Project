@@ -1,25 +1,5 @@
 <template lang="html">
 
-  <!-- <div class="Results__body" id="card-body"> FOR REFERENCE
-    <div v-bind:class="bodyClass" v-for="plant in plantBank">
-      <h3 v-if="plant.name.length > 16" v-bind:class="threeClass"> {{ truncater(plant.name) }} </h3>
-      <h3 v-else v-bind:class="threeClass"> {{ plant.name }} </h3>
-      <img v-if="plant.image.length > 2" v-bind:class="imageClass" v-bind:src="plant.image" v-bind:alt="plant.alt">
-      <img v-else v-bind:class="imageClass" v-bind:src="imageBackup" v-bind:alt="plant.alt">
-    </div>
-  </div> -->
-
-
-    <!-- <div class="Results__body" id="card-body">
-      <div v-bind:class="bodyClass" v-for="plant in plantBank">
-        <h3 v-if="plant.name.length > 16" v-bind:class="threeClass"> {{ truncater(plant.name) }} </h3>
-        <h3 v-else v-bind:class="threeClass"> {{ plant.name }} </h3>
-        <img v-if="plant.image.length > 2" v-bind:class="imageClass" v-bind:src="plant.image" v-bind:alt="plant.alt">
-        <img v-else v-bind:class="imageClass" v-bind:src="imageBackup" v-bind:alt="plant.alt">
-      </div>
-    </div> -->
-
-
     <div class="Gallery">
       <div class="Gallery__case" v-for="data in lists">
         <img class="Gallery__case__image" v-bind:src="list.included[0].attributes['fullsize-url']">
