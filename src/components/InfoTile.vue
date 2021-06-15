@@ -1,7 +1,7 @@
 <template>
 <div class="Gallery" v-for="data in tiles">
   <div class="Gallery__case">
-    <img class="Gallery__case__image" v-bind:src="data.image" alt="data.alt">
+    <img class="Gallery__case__image" v-bind:src="data.image" v-bind:alt="data.alt">
     <h3 class="Gallery__case__h3">{{data.headline}}</h3>
     <p class="Gallery__case__p">{{data.body}}</p>
   </div>
